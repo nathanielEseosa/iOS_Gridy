@@ -5,7 +5,7 @@ It’s a photo puzzle called "Gridy." It's a light visual brain exercise that wo
 
 # App requirements
 
-The app will allow the user to randomly choose one of the photos within the app, use a custom photo from their phone’s photo library, or take one on the spot. The app must contain at least 5 default images.
+The app will allow the user to randomly choose one of the photos within the app, use a custom photo from their phone’s photo library, or take one on the spot. The app contain 5 default images.
 
 The selected photo is displayed on the app screen and becomes available for adjustments. The user can rotate and zoom in a photo. Once the user is happy with the modification, they can start the game. The image is then cropped to fit a square, which is sliced into 16 smaller squares. The squares are then shuffled and positioned at the top of the puzzle container.
 
