@@ -18,3 +18,7 @@ The user will have a ‘hint’ option available at any time, which will allow t
 Once the puzzle is completed, a user may choose to challenge their friends by sharing their image as well as their scores.
 
 The score will reflect the number of moves performed into and out of the puzzle grid. The fewer the moves, the better.
+
+# Mockup
+
+iOS_Gridy/Mockup_Gridy.png
