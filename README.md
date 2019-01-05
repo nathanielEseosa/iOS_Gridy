@@ -1,9 +1,9 @@
-# iOS_Gridy
+# Gridy
 
 It’s a photo puzzle called "Gridy." It's a light visual brain exercise that would interest anyone looking for a short break from whatever they are doing.
 
 
-App requirements
+# App requirements
 
 The app will allow the user to randomly choose one of the photos within the app, use a custom photo from their phone’s photo library, or take one on the spot. The app must contain at least 5 default images.
 
