@@ -19,6 +19,6 @@ Once the puzzle is completed, a user may choose to challenge their friends by sh
 
 The score will reflect the number of moves performed into and out of the puzzle grid. The fewer the moves, the better.
 
-## Mockup
+# Mockup
 
-!iOS_Gridy/Mockup_Gridy.png
+https://github.com/nathanielEseosa/iOS_Gridy/Mockup_Gridy.png
