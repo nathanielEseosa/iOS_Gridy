@@ -21,4 +21,4 @@ The score will reflect the number of moves performed into and out of the puzzle 
 
 # Mockup
 
-!https://github.com/nathanielEseosa/Images_and_Co/blob/master/Mockup_Gridy.png
+(https://github.com/nathanielEseosa/Images_and_Co/blob/master/Mockup_Gridy.png)
