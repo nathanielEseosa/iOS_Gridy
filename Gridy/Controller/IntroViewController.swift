@@ -22,8 +22,14 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var labelButton: UIButton!
     @IBOutlet weak var gridyButton: UIButton!
+    
+
   
     //MARK: - BUTTONS SECTION
+    
+    @IBAction func randomButtonPressed(_ sender: UIButton) {
+        displayRandomImage()
+    }
     
     @IBAction func cameraButtonPressed(_ sender: UIButton) {
         openDeviceCamera()
@@ -33,10 +39,7 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
         openPhotoLibrary()
     }
     
-    @IBAction func randomButtonPressed(_ sender: UIButton) {
-        displayRandomImage()
-        
-    }
+
     
     //MARK: - SUPPORTING PROPERTIES SECTION
     
@@ -76,6 +79,7 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
     func presentImagePicker(sourceType: UIImagePickerController.SourceType){
         let imagePicker =  UIImagePickerController()
         imagePicker.delegate = self
+        imagePicker.sourceType = sourceType
         present(imagePicker, animated: true, completion: nil)
     }
     
@@ -148,10 +152,10 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
         
         // Check if device camera is available
         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
-            
+
             let status = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
             let noPermissionMessage = "Looks like Gridy doesn't have access to your camera. Please go to Settings on your device to permit Gridy accessing your camera"
-            
+
             // Check if access to the device camera is authorized
             switch status {
             case .notDetermined:

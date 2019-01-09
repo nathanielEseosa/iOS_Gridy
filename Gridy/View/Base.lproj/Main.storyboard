@@ -212,19 +212,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="io1-gE-s6Q">
-                                <rect key="frame" x="136" y="647" width="102" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.53333333329999999" green="0.83137254900000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="27"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <action selector="startButtonPressed" destination="qH0-NK-Zpg" eventType="touchUpInside" id="A1Y-rz-v93"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpM-85-sr6">
-                                <rect key="frame" x="93" y="135" width="188" height="69"/>
+                                <rect key="frame" x="44" y="50" width="188" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Adjust the puzzle image:
 zoom, rate, reposition</string>
@@ -243,24 +232,49 @@ zoom, rate, reposition</string>
                                     <action selector="cancelButtonPressed" destination="qH0-NK-Zpg" eventType="touchUpInside" id="s5n-pY-X2r"/>
                                 </connections>
                             </button>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SIN-8b-ELN" userLabel="Image container">
-                                <rect key="frame" x="30" y="229" width="315" height="290"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="io1-gE-s6Q">
+                                <rect key="frame" x="131" y="694" width="79" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.53333333329999999" green="0.83137254900000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="27"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startButtonPressed" destination="qH0-NK-Zpg" eventType="touchUpInside" id="A1Y-rz-v93"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="feE-hG-RrM">
+                                <rect key="frame" x="38" y="274" width="299" height="274"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="ba5-w7-O3j" userLabel="Image placeholder">
-                                        <rect key="frame" x="-8" y="-14" width="323" height="312"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy - App icon" translatesAutoresizingMaskIntoConstraints="NO" id="ba5-w7-O3j" userLabel="Image placeholder">
+                                        <rect key="frame" x="0.0" y="0.0" width="299" height="274"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="274" id="ZVZ-eT-tnD"/>
+                                            <constraint firstAttribute="width" constant="299" id="fh4-dK-KIZ"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ba5-w7-O3j" secondAttribute="trailing" id="6s3-M5-v0G"/>
+                                    <constraint firstItem="ba5-w7-O3j" firstAttribute="leading" secondItem="feE-hG-RrM" secondAttribute="leading" id="BTc-ch-S5V"/>
+                                    <constraint firstItem="ba5-w7-O3j" firstAttribute="top" secondItem="feE-hG-RrM" secondAttribute="top" id="FAr-5d-agb"/>
+                                    <constraint firstAttribute="bottom" secondItem="ba5-w7-O3j" secondAttribute="bottom" id="MeL-qq-nBU"/>
+                                    <constraint firstItem="ba5-w7-O3j" firstAttribute="centerY" secondItem="feE-hG-RrM" secondAttribute="centerY" id="Mgm-zi-zXU"/>
+                                    <constraint firstItem="ba5-w7-O3j" firstAttribute="centerX" secondItem="feE-hG-RrM" secondAttribute="centerX" id="zgq-Xp-cyO"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ba5-w7-O3j" firstAttribute="centerX" secondItem="CH4-mh-Hbk" secondAttribute="centerX" id="I9W-7c-h32"/>
+                            <constraint firstItem="ba5-w7-O3j" firstAttribute="centerY" secondItem="CH4-mh-Hbk" secondAttribute="centerY" id="g4r-Tz-U1O"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CH4-mh-Hbk"/>
                     </view>
                     <navigationItem key="navigationItem" id="UMj-9F-xUk"/>
                     <connections>
                         <outlet property="imageEditorVCImage" destination="ba5-w7-O3j" id="7Dc-RO-ghP"/>
+                        <outlet property="scrollView" destination="feE-hG-RrM" id="fZW-oz-xbe"/>
                         <outlet property="startButton" destination="io1-gE-s6Q" id="YoR-DH-YHQ"/>
                         <segue destination="Nxp-da-k5c" kind="show" identifier="segueToPlayFieldVC" id="rqZ-3B-7ke"/>
                     </connections>
@@ -491,9 +505,9 @@ zoom, rate, reposition</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Gridy - App icon" width="371" height="371"/>
         <image name="Gridy-camera" width="36" height="28"/>
         <image name="Gridy-library" width="36" height="28"/>
         <image name="Gridy-name-large-green" width="330" height="160"/>
-        <image name="dog" width="335" height="346"/>
     </resources>
 </document>

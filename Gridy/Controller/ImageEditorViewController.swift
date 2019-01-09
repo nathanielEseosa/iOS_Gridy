@@ -8,12 +8,14 @@
 
 import UIKit
 
-class ImageEditorViewController: UIViewController {
+class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.delegate = self
         imageEditorVCImage.image = imageEditorVCImagePlaceHolder
         startButton.layer.cornerRadius = 15
+        
         
     }
     
@@ -22,6 +24,9 @@ class ImageEditorViewController: UIViewController {
     
     @IBOutlet weak var imageEditorVCImage: UIImageView!
     @IBOutlet weak var startButton: UIButton!
+    
+    @IBOutlet var scrollView: UIScrollView!
+
     
     
     //MARK: - BUTTONS SECTION
@@ -40,6 +45,12 @@ class ImageEditorViewController: UIViewController {
      var imageEditorVCImagePlaceHolder: UIImage?
     
     //MARK: - SUPPORTING METHODS SECTION
+    
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageEditorVCImage
+        
+    }
   
     
     
