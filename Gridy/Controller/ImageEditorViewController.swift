@@ -28,7 +28,7 @@ class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var scrollView: UIScrollView!
 
     
-    
+    //
     //MARK: - BUTTONS SECTION
     
     @IBAction func cancelButtonPressed() {

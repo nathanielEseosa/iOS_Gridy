@@ -97,7 +97,7 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
     func openPhotoLibrary() {
         let sourceType = UIImagePickerController.SourceType.photoLibrary
         
-        // Asking the user for authorization is redundant because the app does not have access to the images in the photo library. It is only asking the user to pick an image. After the image picks an image, the image will be handed over (using the delegate) to the app's associated view. In this case the user always have full control.
+        // Asking the user for authorization is redundant because the app does not have access to the images in the photo library. It is only asking the user to pick an image. After the user picks an image, the image will be handed over (using the delegate) to the app's associated view. In this case the user always have full control.
         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
             
             let status = PHPhotoLibrary.authorizationStatus()
