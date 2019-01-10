@@ -13,10 +13,10 @@ class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
+        scrollView.minimumZoomScale = 1.0
+        scrollView.maximumZoomScale = 6.0
         imageEditorVCImage.image = imageEditorVCImagePlaceHolder
         startButton.layer.cornerRadius = 15
-        
-        
     }
     
     
@@ -51,7 +51,18 @@ class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
         return imageEditorVCImage
         
     }
-  
+    
+    
+    @IBAction func rotating(_ sender: UIRotationGestureRecognizer) {
+        //let rotation = sender.rotation
+        
+        imageEditorVCImage.transform = imageEditorVCImage.transform.rotated(by: sender.rotation / -2)
+        
+        
+        
+        
+    }
+    
     
     
     

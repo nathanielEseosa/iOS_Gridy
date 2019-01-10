@@ -59,13 +59,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		AE2DFACE21D17AE000461BB7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		AE2DFACF21D17B8300461BB7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				AE2DFACF21D17B8300461BB7 /* Supporting Files */,
-				AE2DFACE21D17AE000461BB7 /* Model */,
 				AE2DFACC21D17A9F00461BB7 /* View */,
 				AE2DFACB21D17A8900461BB7 /* Controller */,
 			);

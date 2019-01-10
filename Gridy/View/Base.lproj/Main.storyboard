@@ -244,30 +244,32 @@ zoom, rate, reposition</string>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="feE-hG-RrM">
-                                <rect key="frame" x="38" y="274" width="299" height="274"/>
+                                <rect key="frame" x="38" y="269" width="299" height="274"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy - App icon" translatesAutoresizingMaskIntoConstraints="NO" id="ba5-w7-O3j" userLabel="Image placeholder">
                                         <rect key="frame" x="0.0" y="0.0" width="299" height="274"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="274" id="ZVZ-eT-tnD"/>
-                                            <constraint firstAttribute="width" constant="299" id="fh4-dK-KIZ"/>
-                                        </constraints>
                                     </imageView>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ba5-w7-O3j" secondAttribute="trailing" id="6s3-M5-v0G"/>
-                                    <constraint firstItem="ba5-w7-O3j" firstAttribute="leading" secondItem="feE-hG-RrM" secondAttribute="leading" id="BTc-ch-S5V"/>
-                                    <constraint firstItem="ba5-w7-O3j" firstAttribute="top" secondItem="feE-hG-RrM" secondAttribute="top" id="FAr-5d-agb"/>
-                                    <constraint firstAttribute="bottom" secondItem="ba5-w7-O3j" secondAttribute="bottom" id="MeL-qq-nBU"/>
-                                    <constraint firstItem="ba5-w7-O3j" firstAttribute="centerY" secondItem="feE-hG-RrM" secondAttribute="centerY" id="Mgm-zi-zXU"/>
-                                    <constraint firstItem="ba5-w7-O3j" firstAttribute="centerX" secondItem="feE-hG-RrM" secondAttribute="centerX" id="zgq-Xp-cyO"/>
+                                    <constraint firstAttribute="width" constant="299" id="8TM-6Q-Q0M"/>
+                                    <constraint firstAttribute="height" constant="274" id="Hjh-B1-mrS"/>
+                                    <constraint firstAttribute="trailing" secondItem="ba5-w7-O3j" secondAttribute="trailing" id="VVB-wF-Sii"/>
+                                    <constraint firstItem="ba5-w7-O3j" firstAttribute="width" secondItem="feE-hG-RrM" secondAttribute="width" id="WPE-gU-3S6"/>
+                                    <constraint firstItem="ba5-w7-O3j" firstAttribute="top" secondItem="feE-hG-RrM" secondAttribute="top" id="qc4-dC-dH4"/>
+                                    <constraint firstAttribute="bottom" secondItem="ba5-w7-O3j" secondAttribute="bottom" id="tV6-xh-2Fh"/>
+                                    <constraint firstItem="ba5-w7-O3j" firstAttribute="leading" secondItem="feE-hG-RrM" secondAttribute="leading" id="yk5-fJ-Xwj"/>
+                                    <constraint firstItem="ba5-w7-O3j" firstAttribute="height" secondItem="feE-hG-RrM" secondAttribute="height" id="zrO-k9-u04"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MSe-Qe-aRa" appends="YES" id="IZf-yq-VRC"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ba5-w7-O3j" firstAttribute="centerX" secondItem="CH4-mh-Hbk" secondAttribute="centerX" id="I9W-7c-h32"/>
-                            <constraint firstItem="ba5-w7-O3j" firstAttribute="centerY" secondItem="CH4-mh-Hbk" secondAttribute="centerY" id="g4r-Tz-U1O"/>
+                            <constraint firstItem="feE-hG-RrM" firstAttribute="centerY" secondItem="plf-40-SrY" secondAttribute="centerY" id="8ol-9V-UvM"/>
+                            <constraint firstItem="feE-hG-RrM" firstAttribute="centerX" secondItem="plf-40-SrY" secondAttribute="centerX" id="fCB-SD-kbP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CH4-mh-Hbk"/>
                     </view>
@@ -280,6 +282,11 @@ zoom, rate, reposition</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldd-kq-B2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <rotationGestureRecognizer id="MSe-Qe-aRa">
+                    <connections>
+                        <action selector="rotating:" destination="qH0-NK-Zpg" id="Oz5-z4-uFX"/>
+                    </connections>
+                </rotationGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-124" y="-87.192118226600982"/>
         </scene>
