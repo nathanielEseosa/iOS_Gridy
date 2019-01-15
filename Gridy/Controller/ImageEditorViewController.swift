@@ -17,56 +17,128 @@ class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
         scrollView.maximumZoomScale = 6.0
         imageEditorVCImage.image = imageEditorVCImagePlaceHolder
         startButton.layer.cornerRadius = 15
+        
     }
     
     
     //MARK: - OUTLETS SECTION
     
+   
+
+    
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var imageEditorVCImage: UIImageView!
     @IBOutlet weak var startButton: UIButton!
     
-    @IBOutlet var scrollView: UIScrollView!
+
+    
+    
 
     
     //
-    //MARK: - BUTTONS SECTION
+    //MARK: - ACTIONS SECTION
     
     @IBAction func cancelButtonPressed() {
         self.dismiss(animated: true)
+        
+        
     }
     
     @IBAction func startButtonPressed() {
         
+        renderedImage = scrollView.asImage()
+        
+        if let renderedImage = renderedImage {
+           arrayOfSlicdeIamges = slice(image: renderedImage, into: 16)
+        }
+    }
+    
+    @IBAction func rotateImage(_ sender: UIRotationGestureRecognizer) {
+        //let rotation = sender.rotation
+        
+        imageEditorVCImage.transform = imageEditorVCImage.transform.rotated(by: sender.rotation / -2)
         
     }
     
+    
     //MARK: - SUPPORTING PROPERTIES SECTION
     
-     var imageEditorVCImagePlaceHolder: UIImage?
+    var imageEditorVCImagePlaceHolder: UIImage?
+    var renderedImage: UIImage?
     
     //MARK: - SUPPORTING METHODS SECTION
     
     
+    /* Zoom functionality*/
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageEditorVCImage
         
     }
     
+    //MARK: - SUPPORTING COLLECTION SECTION
     
-    @IBAction func rotating(_ sender: UIRotationGestureRecognizer) {
-        //let rotation = sender.rotation
+    var arrayOfSlicdeIamges: [UIImage?] = []
+    
+
+    
+    /// Slice image into array of tiles
+    ///
+    /// - Parameters:
+    ///   - image: The original image.
+    ///   - howMany: How many rows/columns to slice the image up into.
+    ///
+    /// - Returns: An array of images.
+    ///
+    /// - Note: The order of the images that are returned will correspond
+    ///         to the `imageOrientation` of the image. If the image's
+    ///         `imageOrientation` is not `.up`, take care interpreting
+    ///         the order in which the tiled images are returned.
+    
+    
+    func slice(image: UIImage, into howMany: Int) -> [UIImage] {
+        let width: CGFloat
+        let height: CGFloat
         
-        imageEditorVCImage.transform = imageEditorVCImage.transform.rotated(by: sender.rotation / -2)
+        switch image.imageOrientation {
+        case .left, .leftMirrored, .right, .rightMirrored:
+            width = image.size.height
+            height = image.size.width
+        default:
+            width = image.size.width
+            height = image.size.height
+        }
         
+        let tileWidth = Int(width / CGFloat(howMany))
+        let tileHeight = Int(height / CGFloat(howMany))
         
+        let scale = Int(image.scale)
+        var images = [UIImage]()
         
+        let cgImage = image.cgImage!
         
+        var adjustedHeight = tileHeight
+        
+        var y = 0
+        for row in 0 ..< howMany {
+            if row == (howMany - 1) {
+                adjustedHeight = Int(height) - y
+            }
+            var adjustedWidth = tileWidth
+            var x = 0
+            for column in 0 ..< howMany {
+                if column == (howMany - 1) {
+                    adjustedWidth = Int(width) - x
+                }
+                let origin = CGPoint(x: x * scale, y: y * scale)
+                let size = CGSize(width: adjustedWidth * scale, height: adjustedHeight * scale)
+                let tileCgImage = cgImage.cropping(to: CGRect(origin: origin, size: size))!
+                images.append(UIImage(cgImage: tileCgImage, scale: image.scale, orientation: image.imageOrientation))
+                x += tileWidth
+            }
+            y += tileHeight
+        }
+        return images
     }
-    
-    
-    
-    
-    
-    
-    
+
+
 }

@@ -24,6 +24,8 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
     @IBOutlet weak var gridyButton: UIButton!
     
 
+    
+
   
     //MARK: - BUTTONS SECTION
     
@@ -51,7 +53,7 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
 
     //MARK: - SUPPORTING METHODS SECTION
   
-    /* Makes the buttons have rounded corners. Called after view loaded */
+    /* Gives the buttons rounded corners. Called after view loaded */
     func changeIntroViewVCButtonRadius() {
         cameraButton.layer.cornerRadius = 15
         labelButton.layer.cornerRadius = 15
@@ -73,7 +75,7 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
     
                         //MARK: ACCESS PHOTO LIBRARY SECTION
     
-    //MARK: - Helper Methods
+    //MARK: - Helper Methods - PHOTO LIBRARY
     
     /* A helper method that will run the photo library app*/
     func presentImagePicker(sourceType: UIImagePickerController.SourceType){
@@ -91,7 +93,7 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
         present(alertController, animated: true)
     }
     
-    //MARK: - Main Method
+    //MARK: - Main Method - PHOTO LIBRARY
     
     /* The main method that uses the “presentImagePicker” and “troubleAlert” methods to display the library and if necessary run the alert. */
     func openPhotoLibrary() {
@@ -126,7 +128,7 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
 
                         //MARK: ACCESS DEVICE CAMERA SECTION
 
-    //MARK: - Helper Methods
+    //MARK: - Helper Methods - DEVICE CAMERA
     
     /* A helper method that will run the device camera app */
     func presentCamera(sourceType: UIImagePickerController.SourceType){
@@ -144,7 +146,7 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
         present(alertController, animated: true)
     }
     
-    //MARK: - Main Method
+    //MARK: - Main Method - DEVICE CAMERA
     
     /**/
     func openDeviceCamera() {
@@ -196,6 +198,7 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
         vc.imageEditorVCImagePlaceHolder = introVCImagePlaceholder
         }
     }
+    
     
     
 }

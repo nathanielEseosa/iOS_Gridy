@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE26F28921EE72C8005A992B /* UIViewRenderExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26F28821EE72C8005A992B /* UIViewRenderExtention.swift */; };
 		AE2DFAD121D17D8E00461BB7 /* timeburner-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE2DFAD021D17D4900461BB7 /* timeburner-regular.ttf */; };
 		F1A586D721A7398E0014EA34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A586D621A7398E0014EA34 /* AppDelegate.swift */; };
 		F1A586DC21A7398E0014EA34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1A586DA21A7398E0014EA34 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE26F28821EE72C8005A992B /* UIViewRenderExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRenderExtention.swift; sourceTree = "<group>"; };
 		AE2DFAD021D17D4900461BB7 /* timeburner-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "timeburner-regular.ttf"; sourceTree = "<group>"; };
 		F1A586D321A7398E0014EA34 /* Gridy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gridy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A586D621A7398E0014EA34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				F1A586DD21A7398F0014EA34 /* Assets.xcassets */,
 				F1A586DF21A7398F0014EA34 /* LaunchScreen.storyboard */,
 				F1A586E221A7398F0014EA34 /* Info.plist */,
+				AE26F28821EE72C8005A992B /* UIViewRenderExtention.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			files = (
 				F1A586EB21A746E80014EA34 /* ImageEditorViewController.swift in Sources */,
 				F1A586ED21A747310014EA34 /* PlayFieldViewController.swift in Sources */,
+				AE26F28921EE72C8005A992B /* UIViewRenderExtention.swift in Sources */,
 				F1A586D721A7398E0014EA34 /* AppDelegate.swift in Sources */,
 				F1A586E921A7468E0014EA34 /* IntroViewController.swift in Sources */,
 			);
