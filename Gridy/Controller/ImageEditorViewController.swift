@@ -24,7 +24,8 @@ class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
     //MARK: - OUTLETS SECTION
     
    
-
+    @IBOutlet weak var testView: UIImageView!
+    
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var imageEditorVCImage: UIImageView!
@@ -49,8 +50,22 @@ class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
         renderedImage = scrollView.asImage()
         
         if let renderedImage = renderedImage {
-           arrayOfSlicdeIamges = slice(image: renderedImage, into: 16)
+           arrayOfSlicedImages = slice(image: renderedImage, into: 4)
+            testView.image = arrayOfSlicedImages[5]
+            performSegue(withIdentifier: "segueToPlayFieldVC", sender: self)
+            
+           
+        } else {
+            let alertContainer = UIAlertController(title: "Oh no!", message: "Your image isnt't there!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default)
+            
+            alertContainer.addAction(okAction)
+            
+            present(alertContainer, animated: true, completion: nil)
         }
+    
+        
+        
     }
     
     @IBAction func rotateImage(_ sender: UIRotationGestureRecognizer) {
@@ -77,7 +92,7 @@ class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
     
     //MARK: - SUPPORTING COLLECTION SECTION
     
-    var arrayOfSlicdeIamges: [UIImage?] = []
+    var arrayOfSlicedImages: [UIImage?] = []
     
 
     
@@ -139,6 +154,13 @@ class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
         }
         return images
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? PlayFieldViewController {
+            for image in arrayOfSlicedImages {
+                vc.arrayOfImages.append(image!)
+            }
+        }
+    }
 
 }
