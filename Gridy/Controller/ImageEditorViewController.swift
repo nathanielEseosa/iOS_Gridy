@@ -21,10 +21,7 @@ class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
     }
     
     
-    //MARK: - OUTLETS SECTION
-    
-   
-    @IBOutlet weak var testView: UIImageView!
+    //MARK: - IBOUTLETS
     
     
     @IBOutlet var scrollView: UIScrollView!
@@ -37,7 +34,7 @@ class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
 
     
     //
-    //MARK: - ACTIONS SECTION
+    //MARK: - IBACTIONS
     
     @IBAction func cancelButtonPressed() {
         self.dismiss(animated: true)
@@ -51,7 +48,7 @@ class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
         
         if let renderedImage = renderedImage {
            arrayOfSlicedImages = slice(image: renderedImage, into: 4)
-            testView.image = arrayOfSlicedImages[5]
+            arrayOfSlicedImages.shuffle()
             performSegue(withIdentifier: "segueToPlayFieldVC", sender: self)
             
            
@@ -76,12 +73,12 @@ class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
     }
     
     
-    //MARK: - SUPPORTING PROPERTIES SECTION
+    //MARK: - SUPPORTING PROPERTIES
     
     var imageEditorVCImagePlaceHolder: UIImage?
     var renderedImage: UIImage?
     
-    //MARK: - SUPPORTING METHODS SECTION
+    //MARK: - SUPPORTING METHODS
     
     
     /* Zoom functionality*/

@@ -268,10 +268,6 @@ zoom, rate, reposition</string>
                                 <color key="textColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cb3-i5-wM8">
-                                <rect key="frame" x="148" y="520" width="118" height="109"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -287,7 +283,6 @@ zoom, rate, reposition</string>
                         <outlet property="imageEditorVCImage" destination="ba5-w7-O3j" id="7Dc-RO-ghP"/>
                         <outlet property="scrollView" destination="feE-hG-RrM" id="fZW-oz-xbe"/>
                         <outlet property="startButton" destination="io1-gE-s6Q" id="YoR-DH-YHQ"/>
-                        <outlet property="testView" destination="Cb3-i5-wM8" id="Dkt-ez-rZF"/>
                         <segue destination="Nxp-da-k5c" kind="show" identifier="segueToPlayFieldVC" id="rqZ-3B-7ke"/>
                     </connections>
                 </viewController>
