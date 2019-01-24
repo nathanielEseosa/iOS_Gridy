@@ -27,10 +27,7 @@ class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var imageEditorVCImage: UIImageView!
     @IBOutlet weak var startButton: UIButton!
-    
 
-    
-    
 
     
     //
@@ -159,5 +156,9 @@ class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
             }
         }
     }
+    
+   
+    
+    
 
 }

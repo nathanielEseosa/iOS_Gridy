@@ -333,7 +333,7 @@ zoom, rate, reposition</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ESG-BO-ZZC">
-                                <rect key="frame" x="10" y="120" width="390" height="161"/>
+                                <rect key="frame" x="10" y="120" width="394" height="161"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PYv-He-ptw">
@@ -357,7 +357,7 @@ zoom, rate, reposition</string>
                                             </subviews>
                                         </view>
                                         <connections>
-                                            <outlet property="slicedImageView" destination="jJw-ps-ygv" id="oAr-f4-IyA"/>
+                                            <outlet property="imageView" destination="jJw-ps-ygv" id="oAr-f4-IyA"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -374,7 +374,7 @@ zoom, rate, reposition</string>
                         <viewLayoutGuide key="safeArea" id="vC5-kI-O5L"/>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="ESG-BO-ZZC" id="XvM-DI-C6a"/>
+                        <outlet property="collectionView" destination="ESG-BO-ZZC" id="hXU-PR-eOs"/>
                         <outlet property="newGameButtonOutlet" destination="APW-MB-eee" id="1Ws-iS-aNu"/>
                     </connections>
                 </viewController>
