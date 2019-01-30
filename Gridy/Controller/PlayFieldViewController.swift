@@ -46,7 +46,24 @@ class PlayFieldViewController: UIViewController, UICollectionViewDelegate, UICol
         switch coordinator.proposal.operation
         {
         case .move:
-            //Add the code to reorder items
+            //Code to reorder items
+            
+            let items = coordinator.items
+            if items.count == 1, let item = items.first, let sourceIndexPath = item.sourceIndexPath
+            {
+                var dIndexPath = destinationIndexPath
+                if dIndexPath.row >= collectionView.numberOfItems(inSection: 0)
+                {
+                    dIndexPath.row = collectionView.numberOfItems(inSection: 0) - 1
+                }
+                collectionView.performBatchUpdates({
+                    self.arrayOfImages.remove(at: sourceIndexPath.row)
+                    self.arrayOfImages.insert(item.dragItem.localObject as! UIImage, at: dIndexPath.row)
+                    collectionView.deleteItems(at: [sourceIndexPath])
+                    collectionView.insertItems(at: [dIndexPath])
+                })
+                coordinator.drop(item.dragItem, toItemAt: dIndexPath)
+            }
             break
             
         case .copy:
@@ -59,7 +76,9 @@ class PlayFieldViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
+        
         if session.localDragSession != nil {
+            
             if collectionView.hasActiveDrag {
                 return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
             }
