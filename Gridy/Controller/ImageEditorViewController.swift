@@ -152,7 +152,7 @@ class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? PlayFieldViewController {
             for image in arrayOfSlicedImages {
-                vc.arrayOfImages.append(image!)
+                vc.imagesInCollectionView1.append(image!)
             }
         }
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+class CollectionViewCell1: UICollectionViewCell {
     
     //MARK: OUTLETS SECTION
     

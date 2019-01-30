@@ -11,13 +11,52 @@ import UIKit
 
 class PlayFieldViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDragDelegate, UICollectionViewDropDelegate {
     
+    //MARK: - PROPERTIES
     
+    
+    //Data Source for CollectionView-1
+    /// This array contains the sliced images from the ImageEditorViewController
+    var imagesInCollectionView1: [UIImage] = []
+    
+    //Data Source for CollectionView-2
+    /// This array will contain the sliced images draged from the CollectionView-1
+    var imagesInCollectionView2: [UIImage] = []
+    
+    
+    //MARK: - IBOUTLETS
+    
+    @IBOutlet weak var collectionView1: UICollectionView!
+    @IBOutlet weak var collectionView2: UICollectionView!
+    
+    @IBOutlet weak var newGameButtonOutlet: UIButton!
+    
+    //MARK: - VIEW LIFECYCLE METHODS
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //CollectionView-1 drag and drop configuration
+        collectionView1.dragInteractionEnabled = true //default value on iPhone is false
+        collectionView1.dataSource = self
+        //collectionView1.delegate = self // ?
+        collectionView1.dragDelegate = self
+        collectionView1.dropDelegate = self
+        
+        //CollectionView-2 drag and drop configuration
+        self.collectionView2.dragInteractionEnabled = true
+        self.collectionView2.dropDelegate = self
+        self.collectionView2.dragDelegate = self
+        self.collectionView2.reorderingCadence = .fast //default value - .immediate
+        
+        newGameButtonOutlet.layer.cornerRadius = 15
+        
+    }
     
     
     /* Enabling drags with the delegate method of the UICollectionViewDragDelegate*/
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         
-        let item = self.arrayOfImages[indexPath.row]
+        let item = self.imagesInCollectionView1[indexPath.row]
         let itemProvider = NSItemProvider(object: item as UIImage)
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
@@ -57,8 +96,8 @@ class PlayFieldViewController: UIViewController, UICollectionViewDelegate, UICol
                     dIndexPath.row = collectionView.numberOfItems(inSection: 0) - 1
                 }
                 collectionView.performBatchUpdates({
-                    self.arrayOfImages.remove(at: sourceIndexPath.row)
-                    self.arrayOfImages.insert(item.dragItem.localObject as! UIImage, at: dIndexPath.row)
+                    self.imagesInCollectionView1.remove(at: sourceIndexPath.row)
+                    self.imagesInCollectionView1.insert(item.dragItem.localObject as! UIImage, at: dIndexPath.row)
                     collectionView.deleteItems(at: [sourceIndexPath])
                     collectionView.insertItems(at: [dIndexPath])
                 })
@@ -91,50 +130,24 @@ class PlayFieldViewController: UIViewController, UICollectionViewDelegate, UICol
         }
     }
 
-  
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        
-
-        collectionView.dragDelegate = self
-        collectionView.dropDelegate = self
-        // The default value of this property is true on iPad and false on iPhone
-        collectionView.dragInteractionEnabled = true
-    
-        
-        
-        newGameButtonOutlet.layer.cornerRadius = 15
-        
-    }
-    
-
-    
-    
-    var arrayOfImages: [UIImage] = []
     
     /* Delegate methods of the UICollectionViewDataSource*/
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayOfImages.count
+        return imagesInCollectionView1.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionView1Cell", for: indexPath) as! CollectionViewCell1
         
-        cell.imageView.image = arrayOfImages[indexPath.item]
+        cell.imageView.image = imagesInCollectionView1[indexPath.item]
         
         return cell
     }
     
     
-    //MARK: - IBOUTLETS
+    
   
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var newGameButtonOutlet: UIButton!
     
     //MARK: - IBACTIONS
     
