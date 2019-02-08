@@ -45,7 +45,6 @@ class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
         
         if let renderedImage = renderedImage {
            arrayOfSlicedImages = slice(image: renderedImage, into: 4)
-            arrayOfSlicedImages.shuffle()
             performSegue(withIdentifier: "segueToPlayFieldVC", sender: self)
             
            
@@ -152,7 +151,7 @@ class ImageEditorViewController: UIViewController, UIScrollViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? PlayFieldViewController {
             for image in arrayOfSlicedImages {
-                vc.imagesInCollectionView1.append(image!)
+                vc.unshuffledArray.append(image!)
             }
         }
     }

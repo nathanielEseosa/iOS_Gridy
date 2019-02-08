@@ -11,6 +11,7 @@
 		AE2DFAD121D17D8E00461BB7 /* timeburner-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE2DFAD021D17D4900461BB7 /* timeburner-regular.ttf */; };
 		AE51E1A121F65B3600590A77 /* CollectionViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE51E1A021F65B3600590A77 /* CollectionViewCell1.swift */; };
 		AE61B4B622026A97006FACD5 /* CollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61B4B522026A97006FACD5 /* CollectionViewCell2.swift */; };
+		AED030322202714300ABEEFC /* DragDropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED030312202714300ABEEFC /* DragDropViewController.swift */; };
 		F1A586D721A7398E0014EA34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A586D621A7398E0014EA34 /* AppDelegate.swift */; };
 		F1A586DC21A7398E0014EA34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1A586DA21A7398E0014EA34 /* Main.storyboard */; };
 		F1A586DE21A7398F0014EA34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1A586DD21A7398F0014EA34 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		AE2DFAD021D17D4900461BB7 /* timeburner-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "timeburner-regular.ttf"; sourceTree = "<group>"; };
 		AE51E1A021F65B3600590A77 /* CollectionViewCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell1.swift; sourceTree = "<group>"; };
 		AE61B4B522026A97006FACD5 /* CollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell2.swift; sourceTree = "<group>"; };
+		AED030312202714300ABEEFC /* DragDropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragDropViewController.swift; sourceTree = "<group>"; };
 		F1A586D321A7398E0014EA34 /* Gridy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gridy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A586D621A7398E0014EA34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1A586DB21A7398E0014EA34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 		AE2DFACB21D17A8900461BB7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AED030312202714300ABEEFC /* DragDropViewController.swift */,
 				F1A586E821A7468E0014EA34 /* IntroViewController.swift */,
 				F1A586EA21A746E80014EA34 /* ImageEditorViewController.swift */,
 				F1A586EC21A747310014EA34 /* PlayFieldViewController.swift */,
@@ -179,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1A586EB21A746E80014EA34 /* ImageEditorViewController.swift in Sources */,
+				AED030322202714300ABEEFC /* DragDropViewController.swift in Sources */,
 				F1A586ED21A747310014EA34 /* PlayFieldViewController.swift in Sources */,
 				AE51E1A121F65B3600590A77 /* CollectionViewCell1.swift in Sources */,
 				AE61B4B622026A97006FACD5 /* CollectionViewCell2.swift in Sources */,

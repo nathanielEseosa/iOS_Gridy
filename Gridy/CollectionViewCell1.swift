@@ -10,17 +10,8 @@ import UIKit
 
 class CollectionViewCell1: UICollectionViewCell {
     
-    //MARK: OUTLETS SECTION
     
     @IBOutlet weak var imageView: UIImageView!
-    
-    
-    //MARK: BUTTONS SECTION
-    //MARK: SUPPORTING PROPERTIES SECTION
-    //MARK: SUPPORTING METHODS SECTION
-    
-    
-    
    
     
 }
